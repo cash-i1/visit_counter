@@ -3,23 +3,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
-<link rel="preload" href="/frontend-fe817bfbd7adb9f3_bg.wasm" crossorigin="anonymous" integrity="sha384-YU_iN7ggD3TT108a6JdY3rniGRA6wWISv_UMXnPWon0kljzCzB0r4FZWF8f7GnzL" as="fetch" type="application/wasm">
-<link rel="modulepreload" href="/frontend-fe817bfbd7adb9f3.js" crossorigin="anonymous" integrity="sha384-6d-CSFO5_Y7W-sN3iH6-Nln8ZbmRiVnjknwUwdWQ7pJ8fWht-PH48DiqJ7E96wgd"></head>
+<link rel="preload" href="/frontend-53b499af6ffee5d2_bg.wasm" crossorigin="anonymous" integrity="sha384-lQv-yNHUD3GGUb96GvD8MBnfONUqHmCgANrXWDvtrb_cGtAWnPxSt7yIsoQETIH8" as="fetch" type="application/wasm">
+<link rel="modulepreload" href="/frontend-53b499af6ffee5d2.js" crossorigin="anonymous" integrity="sha384-rSWGU-8pfBqhkBgxyPrWQOhgBnUlqG7sCBEdPNxp14Z1j02ETQr1mR0zwzeya3hT"></head>
 <body>
     <style>
         body {
             background-color: black;
         }
-        p {
+        div.container {
+            margin: 0 auto;
+            text-align: center;
+        }
+        span {
+            font-size: 80px;
             color: white;
+        }
+        span.visit_count {
+            font-size: 140px;
+            transition: all 0.15s ease-in-out;
+        }
+        span.visit_count:hover {
+            color: greenyellow;
         }
     </style>
     
 
 
 <script type="module">
-import init, * as bindings from '/frontend-fe817bfbd7adb9f3.js';
-init('/frontend-fe817bfbd7adb9f3_bg.wasm');
+import init, * as bindings from '/frontend-53b499af6ffee5d2.js';
+init('/frontend-53b499af6ffee5d2_bg.wasm');
 window.wasmBindings = bindings;
 
 </script><script>"use strict";

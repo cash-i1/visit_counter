@@ -19,7 +19,14 @@ fn App() -> impl IntoView {
     let resp = create_resource(|| (), |_| async move { get_visit_count().await });
     // move || set_visits_json.set(resp.get().unwrap_or_default());
     view! {
-        <p> sdf {move || format!("{}", resp.get().unwrap_or_default() )}</p>
+        <div class:container=true>
+            <span>you are person</span>
+            <br/>
+            <span class:visit_count=true>{move || format!("{}", resp.get().unwrap_or_default() )}</span>
+
+            <br/>
+            <span>to visit on this site</span>
+        </div>
     }
 }
 
