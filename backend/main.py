@@ -3,21 +3,24 @@ import json
 
 app = Flask(__name__)
 
-def get_json():
-    with open("./backend/visits.json", "r") as file:
-        return json.loads(file.read())
+def get_visits():
+    with open("./backend/visits.txt", "r") as file:
+        return file.read()
         
-def write_json(json_data):
-    with open("./backend/visits.json", "w") as file:
-        return json.dump(json_data, file)
+def write_visits(data):
+    with open("./backend/visits.txt", "w") as file:
+        return file.write(str(data))
 
 @app.route('/add_1')
 def add_1():
-    json = get_json()
-    json["visits"] += 1
-    write_json(json)
 
-    response = jsonify(json)
+    visits = get_visits() 
+    print(visits)
+    new_value = int(visits) + 1
+    print(new_value)
+    write_visits(new_value)
+
+    response = jsonify(new_value)
 
     response.headers.add('Access-Control-Allow-Origin', '*')
     response.headers.add('Access-Control-Allow-Headers', 'Content-Type')
