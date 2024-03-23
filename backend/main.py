@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, jsonify
 import json
 
 app = Flask(__name__)
@@ -16,7 +16,13 @@ def add_1():
     json = get_json()
     json["visits"] += 1
     write_json(json)
-    return json
+
+    response = jsonify(json)
+
+    response.headers.add('Access-Control-Allow-Origin', '*')
+    response.headers.add('Access-Control-Allow-Headers', 'Content-Type')
+
+    return response
 
 if __name__ == "__main__":
     app.run()
